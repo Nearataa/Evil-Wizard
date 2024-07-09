@@ -67,18 +67,6 @@ public class Player : MonoBehaviour
        
     }
 
-    public bool isGrounded()
-    {
-        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        
-    }
 
     public void Jump()
     {
@@ -106,6 +94,19 @@ public class Player : MonoBehaviour
             Jumping = false;
         }
     }
+    public bool isGrounded()
+    {
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
     public void Flip()
     {
         isFacingRight = !isFacingRight;
