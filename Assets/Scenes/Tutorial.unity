@@ -5322,7 +5322,7 @@ GameObject:
   - component: {fileID: 1565388462}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: CoinText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
