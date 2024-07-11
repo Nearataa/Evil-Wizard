@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CoinCollision : MonoBehaviour
+public class Deathtrap : MonoBehaviour
 {
+    public string restartOnLevel;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.IncreaseCoinCount();
-            Destroy(gameObject);
+            GameManager.Instance.ResetCoins();
+            SceneManager.LoadScene(restartOnLevel);
         }
     }
+
 }
