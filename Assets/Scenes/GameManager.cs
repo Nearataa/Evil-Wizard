@@ -5,12 +5,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public TextMeshProUGUI coinText; // Reference to the UI text element
+    public Text coinText; // Referenz zum UI-Text-Element
     private int coinCount = 0;
+
+    private int level = 0; // Beispiel für die Levelnummer
 
     private void Awake()
     {
@@ -24,7 +27,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void Start()
+    {
+        LoadGame();
+        UpdateCoinText();
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -37,9 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Find the new coinText object in the loaded scene
-        coinText = GameObject.FindWithTag("CoinText")?.GetComponent<TextMeshProUGUI>();
-        // Update the text to reflect the current coin count
+        coinText = GameObject.FindWithTag("CoinText")?.GetComponent<Text>();
         UpdateCoinText();
     }
 
@@ -51,12 +58,51 @@ public class GameManager : MonoBehaviour
 
     private void UpdateCoinText()
     {
-        coinText.text = "Coins: " + coinCount.ToString();
+        if (coinText != null)
+        {
+            coinText.text = "Coins: " + coinCount.ToString();
+        }
+    }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("CoinCount", coinCount);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadGame()
+    {
+        if (PlayerPrefs.HasKey("CoinCount"))
+        {
+            coinCount = PlayerPrefs.GetInt("CoinCount");
+        }
+    }
+
+    public void LoadNextScene()
+    {
+        // Beispiel: Lade die nächste Szene basierend auf dem aktuellen Level
+        level++;
+        SceneManager.LoadScene("Level " + level.ToString());
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
     }
 
     public void ResetCoins()
     {
         coinCount = 0;
         UpdateCoinText();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveGame();
     }
 }

@@ -5,13 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class PortalTrigger : MonoBehaviour
 {
-    public string sceneToLoad; 
-
+    [SerializeField] bool goNextLevel;
+    [SerializeField] string levelName;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(sceneToLoad);
+            UnlockNewLevel();
+            GameManager.Instance.NextLevel();
+        }
+    }
+    void UnlockNewLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
         }
     }
 }
