@@ -85,6 +85,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level " + level.ToString());
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+
     public void ResetCoins()
     {
         coinCount = 0;
