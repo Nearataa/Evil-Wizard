@@ -9,7 +9,7 @@ public class CoinCollision : MonoBehaviour
     
     private void Start()
     {
-        audioSource = GameObject.FindWithTag("Player")?.GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             Debug.LogError("AudioSource component is missing from the player.");
