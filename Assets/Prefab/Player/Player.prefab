@@ -258,6 +258,7 @@ MonoBehaviour:
     m_Bits: 128
   damageAmount: 1
   timeBtwAttacks: 0.5
+  hitSound: {fileID: 8300000, guid: 1d7d8ad9707768244a00c51fdb035f6a, type: 3}
 --- !u!114 &9146783693680267443
 MonoBehaviour:
   m_ObjectHideFlags: 0
