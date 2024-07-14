@@ -1082,6 +1082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Idle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8867985557118746303, guid: 6dab528ea53eeba489429a176c686bf4, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1019542361}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1147,6 +1151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 8867985557118746303, guid: 6dab528ea53eeba489429a176c686bf4, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1019542361}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2125,6 +2133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Idle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8867985557118746303, guid: 6dab528ea53eeba489429a176c686bf4, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1019542361}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2275,6 +2287,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575ad35fd5eae034cad9738993ef0bcf, type: 3}
+--- !u!114 &1019542361 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9146783693680267443, guid: 575ad35fd5eae034cad9738993ef0bcf, type: 3}
+  m_PrefabInstance: {fileID: 1019542360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7b8c07bdbbc964ca255ae2bd1981d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1072256814
 GameObject:
   m_ObjectHideFlags: 0
@@ -5183,7 +5206,6 @@ SceneRoots:
   - {fileID: 1318018404}
   - {fileID: 870134747}
   - {fileID: 1404925115}
-  - {fileID: 1019542360}
   - {fileID: 2058259205}
   - {fileID: 289979699}
   - {fileID: 854373468}
@@ -5196,3 +5218,4 @@ SceneRoots:
   - {fileID: 930251791}
   - {fileID: 354301545}
   - {fileID: 921673287}
+  - {fileID: 1019542360}
