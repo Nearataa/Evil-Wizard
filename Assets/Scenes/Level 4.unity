@@ -2090,6 +2090,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4922142741069981596, guid: 3d5e266c5c89b0646aff123d41bbbefd, type: 3}
   m_PrefabInstance: {fileID: 7643552359614737033}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1541389870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541389868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f375dec94e792408c6c0f0f15b1ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570163300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2868,11 +2880,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4329840617640159222, guid: a6f48fba31fb4ac4b9689c7637a4b7ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.95
+      value: 59.04
       objectReference: {fileID: 0}
     - target: {fileID: 4329840617640159222, guid: a6f48fba31fb4ac4b9689c7637a4b7ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.27
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 4329840617640159222, guid: a6f48fba31fb4ac4b9689c7637a4b7ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4465,6 +4477,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1052602436084007884, guid: 3d5e266c5c89b0646aff123d41bbbefd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005362540299467333, guid: 3d5e266c5c89b0646aff123d41bbbefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndQuit
+      objectReference: {fileID: 0}
     - target: {fileID: 4922142741069981596, guid: 3d5e266c5c89b0646aff123d41bbbefd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4548,7 +4568,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1052602436084007884, guid: 3d5e266c5c89b0646aff123d41bbbefd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1541389870}
   m_SourcePrefab: {fileID: 100100000, guid: 3d5e266c5c89b0646aff123d41bbbefd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
