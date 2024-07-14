@@ -6398,7 +6398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee02c128b98bc942b75aab623de960d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1565388462}
+  coinText: {fileID: 0}
 --- !u!1 &2119125358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6429,7 +6429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062479be0f38bd9409885e30eefab453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartOnLevel: Tutorial
 --- !u!61 &2119125360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6504,11 +6503,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8123750606498791879, guid: b9f77b3a3ba23fb45b49b9625ab4ba83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.7
+      value: 59.63
       objectReference: {fileID: 0}
     - target: {fileID: 8123750606498791879, guid: b9f77b3a3ba23fb45b49b9625ab4ba83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 8123750606498791879, guid: b9f77b3a3ba23fb45b49b9625ab4ba83, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6560,11 +6559,11 @@ SceneRoots:
   - {fileID: 1551826427}
   - {fileID: 645087614}
   - {fileID: 835497410}
-  - {fileID: 745011318}
-  - {fileID: 694183940}
   - {fileID: 3236874142373562333}
+  - {fileID: 694183940}
   - {fileID: 1088057388}
   - {fileID: 397308796}
   - {fileID: 597006633}
   - {fileID: 1915283706}
   - {fileID: 2119125361}
+  - {fileID: 745011318}
