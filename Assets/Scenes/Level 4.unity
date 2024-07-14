@@ -3921,12 +3921,20 @@ PrefabInstance:
       value: Win
       objectReference: {fileID: 0}
     - target: {fileID: 4329840617640159222, guid: a6f48fba31fb4ac4b9689c7637a4b7ad, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.53735614
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329840617640159222, guid: a6f48fba31fb4ac4b9689c7637a4b7ad, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.92001003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329840617640159222, guid: a6f48fba31fb4ac4b9689c7637a4b7ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.95
+      value: 58.26
       objectReference: {fileID: 0}
     - target: {fileID: 4329840617640159222, guid: a6f48fba31fb4ac4b9689c7637a4b7ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.27
+      value: 3.22
       objectReference: {fileID: 0}
     - target: {fileID: 4329840617640159222, guid: a6f48fba31fb4ac4b9689c7637a4b7ad, type: 3}
       propertyPath: m_LocalPosition.z
