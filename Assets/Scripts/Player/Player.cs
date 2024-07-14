@@ -29,9 +29,15 @@ public class Player : MonoBehaviour
     private bool isFalling;
     private float jumpTimeCounter;
 
+    public float moveThreshold = 0.1f;
+    private AudioSource audioSource;
+
+    public AudioClip jumpSound;
+
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         isFacingRight = true;
         anim = GetComponent<Animator>();
@@ -41,7 +47,7 @@ public class Player : MonoBehaviour
     {
         Move();
         Jump();
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -87,6 +93,10 @@ public class Player : MonoBehaviour
     {
         if (UserInput.instance.controls.Jumping.Jump.WasPressedThisFrame() && isGrounded())
         {
+            if (jumpSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(jumpSound);
+            }
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
             jumpTimeCounter = JumpTime;
             Jumping = true;
@@ -108,6 +118,7 @@ public class Player : MonoBehaviour
         {
             Jumping = false;
         }
+        
     }
     public bool isGrounded()
     {
@@ -129,6 +140,7 @@ public class Player : MonoBehaviour
         localScale.x *= -1f;
         transform.localScale = localScale;
     }
+
   
     #endregion
 

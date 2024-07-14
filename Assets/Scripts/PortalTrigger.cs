@@ -12,6 +12,7 @@ public class PortalTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             UnlockNewLevel();
+            Audiomanager.Instance.PlayPortalSound();
             GameManager.Instance.NextLevel();
         }
     }

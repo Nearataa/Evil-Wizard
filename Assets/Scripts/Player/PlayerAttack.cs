@@ -19,9 +19,13 @@ public class PlayerAttack : MonoBehaviour
     private Animator animator;
 
     private float attackTimeCounter;
+    private AudioSource audioSource;
+
+    public AudioClip hitSound;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
         attackTimeCounter = timeBtwAttacks;
@@ -35,6 +39,13 @@ public class PlayerAttack : MonoBehaviour
 
             //Attack();
             animator.SetTrigger("attack");
+            if (hitSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(hitSound);
+                
+
+            }
+            
         }
 
         attackTimeCounter += Time.deltaTime;

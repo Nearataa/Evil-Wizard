@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
+  
     public GameObject objectToSpawn; // The object prefab to spawn
     public BoxCollider2D spawnArea;  // The area within which to spawn objects
 
