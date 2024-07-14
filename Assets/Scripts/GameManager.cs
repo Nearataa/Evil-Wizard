@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseCoinCount()
     {
-        Debug.LogWarning("Test");
         coinCount++;
         UpdateCoinText();
     }

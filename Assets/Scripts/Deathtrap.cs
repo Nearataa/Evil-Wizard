@@ -4,19 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Deathtrap : MonoBehaviour
-{
+{    
+    private AudioSource audioSource;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             // Spieler stirbt: Setze Coins zurück
             GameManager.Instance.ResetCoins();
-            
-            // Optional: Füge hier weitere Aktionen hinzu, z.B. Soundeffekte, Animationen usw.
-
+            Audiomanager.Instance.PlayDeathSound();
             // Lade die Szene neu, um den Spieler zurückzusetzen
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
         }
     }
+    
 }
