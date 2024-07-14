@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public Text coinText; // Referenz zum UI-Text-Element
+    public TextMeshProUGUI coinText; // Referenz zum UI-Text-Element
     private int coinCount = 0;
 
     private int level = 0; // Beispiel für die Levelnummer
@@ -46,12 +46,13 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        coinText = GameObject.FindWithTag("CoinText")?.GetComponent<Text>();
+        coinText = GameObject.FindWithTag("CoinText")?.GetComponent<TextMeshProUGUI>();
         UpdateCoinText();
     }
 
     public void IncreaseCoinCount()
     {
+        Debug.LogWarning("Test");
         coinCount++;
         UpdateCoinText();
     }
