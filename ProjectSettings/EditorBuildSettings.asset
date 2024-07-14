@@ -6,14 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: dba796f181e6b1c4d8c44c4e6552dc4c
+  - enabled: 1
     path: Assets/karsiori/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scenes/Level 0.unity
     guid: f9e7f0447cd4f144f8b4cfa916920dd2
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 718adf10f6236fc408c67b138cd5de0b
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 12f8f70089355434ba8f3f724b6ef2ad
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 39be2dc80ce7c49469f0645ab68e982e
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: def84798c06cd2542820f70ce06d4460
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: fcf58e46140c03c44b5c7e6375d0244f, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 4d9df9b3e0d652d45ae1142f6385084d, type: 2}
