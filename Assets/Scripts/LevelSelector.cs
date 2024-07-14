@@ -24,7 +24,14 @@ public class LevelSelector : MonoBehaviour
     }
     public void OpenScene(int level)
     {
+        Time.timeScale = 1f;
         string levelName = "Level " + level;
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void OpenMenu()
+    {
+        string levelName = "MainMenu";
         SceneManager.LoadScene(levelName);
     }
 }
