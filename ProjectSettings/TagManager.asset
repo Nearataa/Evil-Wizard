@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - CoinText
+  - Win
   layers:
   - Default
   - TransparentFX

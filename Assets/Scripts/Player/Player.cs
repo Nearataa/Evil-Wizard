@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float JumpTime = 0.35f;
 
 
-
+    public GameObject WINSCREEN;
+    private bool isOver;
     private Rigidbody2D rb;
     private float moveInput;
     private Animator anim;
@@ -41,6 +42,20 @@ public class Player : MonoBehaviour
         Move();
         Jump();
         
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Win" && !isOver)
+        {
+            isOver = true;
+            gameOver();
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void gameOver()
+    {
+        WINSCREEN.SetActive(true);
     }
     #region Movement
     private void Move()
