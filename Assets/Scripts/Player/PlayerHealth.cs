@@ -1,24 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 10;
+
     public int health;
+    private Animator anim;
 
     void Start()
     {
-        health = maxHealth; 
+        health = maxHealth;
+        anim = GetComponent<Animator>();
     }
-
-public void TakeDamage(int damage)
+    public void Update()
     {
-        health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
-            Destroy(gameObject);
+
+            
+            Die();
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        
+    }
+
+    void Die()
+    {
+        anim.SetTrigger("isDead");
+        StartCoroutine(Respawn(1f));
+    }
+
+    IEnumerator Respawn(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        anim.SetBool("isDead", false);
+        GameManager.Instance.ResetCoins();
+        health = maxHealth;
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+   /* void Respawn()
+    {
+        GameManager.Instance.ResetCoins();
+        health = maxHealth;
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+
+    }*/
 }
