@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-    public float spawnInterval = 3f;  // Time between spawns
-    public Vector2 spawnAreaMin;  // The minimum X and Y values for the spawn area
-    public Vector2 spawnAreaMax;  // The maximum X and Y values for the spawn area
+  
+    public GameObject objectToSpawn; // The object prefab to spawn
+    public BoxCollider2D spawnArea;  // The area within which to spawn objects
 
-    public int maxSpawnCount;
+    // The number of objects to spawn
+    public int numberOfObjects = 10;
 
-    public GameObject objectToInstantiate; 
     private Camera mainCamera;
     
     void Start()
@@ -22,46 +22,30 @@ public class Coins : MonoBehaviour
             Debug.LogError("Main Camera not found. Please ensure you have a Camera tagged as MainCamera.");
             return;
         }
-        
-        for (int i = 0; i < maxSpawnCount; i++)
+        Invoke("SpawnObjects", 0);
+    }
+    
+
+ 
+  
+
+    private void SpawnObjects()
+    {
+        for (int i = 0; i < numberOfObjects; i++)
         {
-            Invoke("SpawnObject", 0);
+            Vector3 spawnPosition = GetRandomPosition();
+            Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
         }
-        //InvokeRepeating("SpawnObject", spawnInterval, spawnInterval);
     }
-    
-    void SpawnObject()
+
+    private Vector3 GetRandomPosition()
     {
-        
-        // Generate random position within the specified range
-        Vector2 spawnPosition = GetRandomPositionInView();
+        Bounds bounds = spawnArea.bounds;
 
-        // Instantiate the object at the random position
-        Instantiate(objectToInstantiate, spawnPosition, Quaternion.identity);
-    }
-    
-    Vector2 GetRandomPositionInView()
-    {
-        // Get the main camera's position in the world
-        Vector3 cameraPos = mainCamera.transform.position;
+        float x = Random.Range(bounds.min.x, bounds.max.x);
+        float y = Random.Range(bounds.min.y, bounds.max.y);
 
-        // Calculate the orthographic size and aspect ratio
-        float height = 2f * mainCamera.orthographicSize;
-        float width = height * mainCamera.aspect;
-
-        // Calculate the spawn area within the camera's view
-        float minX = cameraPos.x - width / 2f;
-        float maxX = cameraPos.x + width / 2f;
-        float minY = cameraPos.y - height / 2f;
-        float maxY = cameraPos.y + height / 2f;
-
-        // Generate a random position within these boundaries
-        float randomX = Random.Range(minX, maxX);
-        float randomY = Random.Range(minY, maxY);
-
-        return new Vector2(randomX, randomY);
-        
-        FindObjectOfType<GameManager>().IncreaseCoinCount();
+        return new Vector3(x, y, 0); // Assuming 2D, so z=0
     }
     
 }
