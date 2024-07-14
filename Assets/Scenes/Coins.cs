@@ -60,5 +60,8 @@ public class Coins : MonoBehaviour
         float randomY = Random.Range(minY, maxY);
 
         return new Vector2(randomX, randomY);
+        
+        FindObjectOfType<GameManager>().IncreaseCoinCount();
     }
+    
 }

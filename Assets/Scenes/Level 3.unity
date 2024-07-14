@@ -2028,7 +2028,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.902772
+  orthographic size: 3.9713268
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2615,7 +2615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062479be0f38bd9409885e30eefab453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartOnLevel: Tutorial
 --- !u!61 &867855937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3803,7 +3802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee02c128b98bc942b75aab623de960d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 608896303}
+  coinText: {fileID: 0}
 --- !u!1 &1564521288
 GameObject:
   m_ObjectHideFlags: 0

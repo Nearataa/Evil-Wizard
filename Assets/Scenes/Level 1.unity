@@ -2558,7 +2558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062479be0f38bd9409885e30eefab453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartOnLevel: Tutorial
 --- !u!61 &1456329335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3082,7 +3081,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee02c128b98bc942b75aab623de960d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1646129540}
+  scenes:
+  - Scene1
+  - Scene2
+  - Scene3
+  - Scene4
+  - Scene5
+  coinText: {fileID: 0}
+  level: 3
 --- !u!1 &1658509724
 GameObject:
   m_ObjectHideFlags: 0
