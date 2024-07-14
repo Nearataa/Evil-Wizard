@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Deathtrap : MonoBehaviour
 {
-    public string restartOnLevel;
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
+            // Spieler stirbt: Setze Coins zurück
             GameManager.Instance.ResetCoins();
-            SceneManager.LoadScene(restartOnLevel);
+            
+            // Optional: Füge hier weitere Aktionen hinzu, z.B. Soundeffekte, Animationen usw.
+
+            // Lade die Szene neu, um den Spieler zurückzusetzen
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
     }
-
 }
