@@ -18,9 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public void Update()
     {
         if (health <= 0)
-        {
-
-            
+        {      
             Die();
         }
     }
@@ -28,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        
     }
 
     void Die()
