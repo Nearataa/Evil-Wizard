@@ -209,7 +209,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5064723604712391943}
   - component: {fileID: 8607049087042668875}
-  - component: {fileID: 5524342443494964685}
   m_Layer: 5
   m_Name: Levels Panel
   m_TagString: Untagged
@@ -257,18 +256,6 @@ MonoBehaviour:
   - {fileID: 2762528552995670675}
   - {fileID: 8056715937358274741}
   - {fileID: 282697448982652127}
---- !u!114 &5524342443494964685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293650791312138750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d511bd51896bf488d82595582bdedb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8025068674733160097
 GameObject:
   m_ObjectHideFlags: 0

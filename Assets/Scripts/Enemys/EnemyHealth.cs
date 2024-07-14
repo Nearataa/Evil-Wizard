@@ -8,12 +8,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private float currentHealth;
 
-    private Animator animator;
     public bool HasTakeDamage { get; set; }
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
 
@@ -21,7 +19,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         HasTakeDamage = true;
 
-        animator.SetTrigger("hit");
         currentHealth -= damageAmount;
 
         if (currentHealth <= 0)
@@ -32,13 +29,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        StartCoroutine(Kill(0.6f));
-    }
-
-    IEnumerator Kill(float duration)
-    {
-        animator.SetTrigger("death");
-        yield return new WaitForSeconds(duration);
         Destroy(gameObject);
     }
 }
